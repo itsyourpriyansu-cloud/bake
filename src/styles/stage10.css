@@ -310,6 +310,14 @@ img { max-width: 100%; }
   .smart-hero-copy h2 { font-size: 2.05rem; }
 }
 
+.landing-brag { display: flex; justify-content: center; padding: clamp(2rem, 5vw, 3.5rem) var(--landing-gutter); background: var(--wave-burgundy); }
+.landing-brag-video { width: min(100%, 1040px); aspect-ratio: 16 / 9; border-radius: clamp(18px, 2.4vw, 32px); box-shadow: 0 30px 70px rgba(77, 7, 17, .35); background: #000; }
+
+@media (max-width: 600px) {
+  .landing-brag { padding: 2rem 1rem; }
+  .landing-brag-video { border-radius: 18px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .stage-ten-landing *, .stage-two-home *, .product-card, .product-art img { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }

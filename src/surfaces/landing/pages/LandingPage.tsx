@@ -40,6 +40,20 @@ export default function LandingPage() {
       </motion.div>
     </section>
 
+    <section className="landing-brag" aria-label="The Pizza Wave introduction video">
+      <video
+        className="landing-brag-video"
+        src="/assets/video/pizza-wave-brag.mp4"
+        poster="/assets/video/pizza-wave-brag.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label="The Pizza Wave — own the wave, not the aggregator"
+      />
+    </section>
+
     <section className="landing-strip" aria-label="Pizza Wave menu highlights"><span>PIZZA</span><i /> <span>KULHAD</span><i /> <span>SHAKES</span><i /> <span>QUICK BITES</span></section>
 
     <section className="landing-food" aria-labelledby="food-preview-title">

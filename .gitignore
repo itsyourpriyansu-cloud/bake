@@ -11,3 +11,9 @@ backend/.ruff_cache/
 backend/pizza_wave.db
 **/__pycache__/
 *.py[cod]
+.claude/
+.mypy_cache/
+.ruff_cache/
+brag-output/
+exports/
+skills-lock.json

@@ -20,7 +20,7 @@
         },
         {
           "key": "Service-Worker-Allowed",
-          "value": "/app/"
+          "value": "/"
         }
       ]
     },
@@ -53,6 +53,15 @@
     },
     {
       "source": "/app.webmanifest",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/bakery-app.webmanifest",
       "headers": [
         {
           "key": "Cache-Control",
