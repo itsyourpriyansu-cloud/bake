@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+    <rect width="300" height="300" rx="24" fill="#FEFEF6"/>
+    <!-- Wallet with empty wave token -->
+    <rect x="70" y="100" width="160" height="120" rx="12" fill="none" stroke="#4D0711" stroke-width="5"/>
+    <path d="M 70 130 L 230 130" stroke="#4D0711" stroke-width="4"/>
+    <circle cx="180" cy="170" r="18" fill="none" stroke="#4D0711" stroke-width="4"/>
+    <path d="M 170 172 Q 180 162, 190 172" fill="none" stroke="#4D0711" stroke-width="3"/>
+  </svg>

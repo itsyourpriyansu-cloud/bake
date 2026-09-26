@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Pizza Wave Horizontal Full Brand Lockup (Light Variant) -->
+  <g transform="translate(6, 6)">
+    <rect x="2" y="2" width="64" height="64" rx="18" fill="#FD7E3B" stroke="#FEFEF6" stroke-width="2.5"/>
+    <circle cx="22" cy="11" r="2" fill="#FEFEF6"/>
+    <circle cx="34" cy="9" r="2.6" fill="#FDCC3B"/>
+    <circle cx="46" cy="11" r="2" fill="#FEFEF6"/>
+    <path d="M 11 18 C 22 11, 46 11, 57 18 C 58 19, 58 21, 57 21 C 50 25, 42 24, 34 22 C 26 21, 18 20, 11 21 C 9 20, 9 18, 11 18 Z" fill="#FDCC3B" stroke="#4D0711" stroke-width="1.8"/>
+    <path d="M 12 21 L 56 21 L 35 59 C 34 61, 31 61, 30 59 L 12 21 Z" fill="#FEFEF6" stroke="#4D0711" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M 14 23 C 22 29, 29 23, 35 28 C 42 33, 49 27, 54 23 L 34 57 Z" fill="#FDCC3B"/>
+    <path d="M 15 25 C 22 30, 28 27, 34 31 C 40 34, 46 29, 52 25 C 46 37, 39 46, 34 57 C 29 46, 21 37, 15 25 Z" fill="#FD7E3B"/>
+    <circle cx="26" cy="33" r="4.2" fill="#BD1F17" stroke="#4D0711" stroke-width="1.2"/>
+    <circle cx="40" cy="36" r="3.5" fill="#BD1F17" stroke="#4D0711" stroke-width="1"/>
+    <circle cx="32" cy="46" r="2.8" fill="#BD1F17" stroke="#4D0711" stroke-width="0.9"/>
+  </g>
+
+  <g transform="translate(86, 16)">
+    <text x="0" y="14" font-family="'Phudu', 'Poppins', sans-serif" font-weight="800" font-size="13" letter-spacing="3.5" fill="#FDCC3B">THE</text>
+    <text x="0" y="42" font-family="'Phudu', 'Poppins', sans-serif" font-weight="900" font-size="28" letter-spacing="1" fill="#FEFEF6">PIZZA WAVE</text>
+  </g>
+</svg>

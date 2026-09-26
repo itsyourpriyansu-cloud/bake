@@ -1,0 +1,1 @@
+"""Pure ordering-domain logic."""

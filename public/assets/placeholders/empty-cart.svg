@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+    <rect width="300" height="300" rx="24" fill="#FEFEF6"/>
+    <!-- Open empty pizza box -->
+    <path d="M 60 140 L 150 100 L 240 140 L 150 180 Z" fill="none" stroke="#4D0711" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M 60 140 L 60 200 L 150 240 L 150 180" fill="none" stroke="#4D0711" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M 240 140 L 240 200 L 150 240" fill="none" stroke="#4D0711" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M 150 100 L 150 40 L 240 80 L 240 140" fill="none" stroke="#4D0711" stroke-width="5" stroke-dasharray="8 6" stroke-linejoin="round"/>
+  </svg>

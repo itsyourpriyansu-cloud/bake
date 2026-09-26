@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
+  <!-- Pizza Wave PWA Icon 192x192 -->
+  <rect width="192" height="192" rx="48" fill="#FD7E3B"/>
+  <g transform="translate(32, 32)">
+    <path d="M26 39 C 45 27, 83 27, 102 39 C 105 41, 105 45, 102 47 C 91 54, 77 52, 64 49 C 51 46, 37 45, 26 47 C 23 45, 23 41, 26 39 Z" fill="#FDCC3B" stroke="#4D0711" stroke-width="3.5"/>
+    <path d="M28 46 Q 64 55 100 46 L 68 106 C 66 110, 62 110, 60 106 L 28 46 Z" fill="#FEFEF6" stroke="#4D0711" stroke-width="3.5"/>
+    <path d="M31 50 C 45 59, 58 50, 69 57 C 80 64, 90 54, 97 50 L 64 104 Z" fill="#FDCC3B"/>
+    <path d="M34 54 C 47 63, 56 57, 66 63 C 77 69, 87 60, 94 54 C 83 75, 71 91, 64 104 C 57 91, 45 75, 34 54 Z" fill="#FD7E3B"/>
+    <circle cx="54" cy="68" r="6" fill="#BD1F17" stroke="#4D0711" stroke-width="2"/>
+    <circle cx="74" cy="74" r="5" fill="#BD1F17" stroke="#4D0711" stroke-width="1.8"/>
+    <circle cx="61" cy="87" r="4" fill="#BD1F17" stroke="#4D0711" stroke-width="1.5"/>
+  </g>
+</svg>
