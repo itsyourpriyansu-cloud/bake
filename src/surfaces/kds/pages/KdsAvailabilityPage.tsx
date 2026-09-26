@@ -1,0 +1,24 @@
+import { AlertTriangle, Check, Clock3, LockKeyhole, Search, TimerOff } from 'lucide-react'
+import { useMemo, useState } from 'react'
+import type { ChefUnavailableDuration } from '../../../domain/availability/availability.engine'
+import type { KdsAvailabilityItem } from '../../../domain/kitchen/kds.types'
+import { useKdsActions, useKdsAvailability } from '../../../features/kds/hooks/useKds'
+import { BottomSheet, EmptyState, ErrorState, PrimaryButton, SecondaryButton, Skeleton, TextInput } from '../../../shared/components'
+
+const durations: Array<{ value: ChefUnavailableDuration; label: string }> = [
+  { value: 30, label: '30 MIN' }, { value: 60, label: '1 HOUR' }, { value: 'REST_OF_DAY', label: 'TODAY' }, { value: 'UNTIL_ENABLED', label: 'UNTIL ENABLED' },
+]
+
+export default function KdsAvailabilityPage() {
+  const availability = useKdsAvailability()
+  const actions = useKdsActions()
+  const [query, setQuery] = useState('')
+  const [kind, setKind] = useState<'ALL' | KdsAvailabilityItem['entityType']>('ALL')
+  const [selected, setSelected] = useState<KdsAvailabilityItem>()
+  const [duration, setDuration] = useState<ChefUnavailableDuration>(60)
+  const [reason, setReason] = useState('Ingredient unavailable')
+  const rows = useMemo(() => (availability.data ?? []).filter((item) => (kind === 'ALL' || item.entityType === kind) && `${item.name} ${item.parentName ?? ''}`.toLowerCase().includes(query.toLowerCase())), [availability.data, kind, query])
+  const disable = () => selected && actions.availability.mutate({ entityId: selected.entityId, entityType: selected.entityType, duration, reason }, { onSuccess: () => setSelected(undefined) })
+  if (availability.isError) return <section className="kds-screen"><ErrorState retry={() => availability.refetch()} /></section>
+  return <section className="kds-screen kds-availability-screen"><div className="kds-screen-title"><div><span>SCREEN 3 · TEMPORARY CONTROL</span><h1>AVAILABILITY</h1></div><div className="kds-availability-count"><strong>{rows.length}</strong><span>VISIBLE ITEMS</span></div></div><div className="kds-availability-tools"><label className="kds-search"><Search /><input aria-label="Search products or modifiers" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search product, variant or modifier" /></label><div className="kds-kind-filter" role="radiogroup" aria-label="Availability type">{(['ALL', 'PRODUCT', 'VARIANT', 'MODIFIER'] as const).map((value) => <button type="button" role="radio" aria-checked={kind === value} className={kind === value ? 'active' : ''} key={value} onClick={() => setKind(value)}>{value}</button>)}</div></div>{availability.isPending ? <div className="kds-loading-grid"><Skeleton /><Skeleton /></div> : rows.length ? <div className="kds-availability-grid">{rows.map((item) => <article className={`kds-availability-row ${item.locked ? 'locked' : ''}`} key={`${item.entityType}-${item.entityId}`}><div className="kds-entity-type">{item.entityType}</div><div><h2>{item.name}</h2>{item.parentName && <p>{item.parentName}</p>}</div>{item.locked ? <div className="kds-owner-lock"><LockKeyhole /><strong>DISABLED BY OWNER</strong><span>Chef cannot enable</span></div> : item.effectiveStatus === 'CHEF_TEMP_UNAVAILABLE' ? <div className="kds-temp-state"><TimerOff /><span><strong>CHEF UNAVAILABLE</strong><small>{item.expiresAt ? `Until ${new Intl.DateTimeFormat('en-IN', { hour: 'numeric', minute: '2-digit' }).format(new Date(item.expiresAt))}` : 'Until manually enabled'}</small></span><button type="button" disabled={actions.enable.isPending} onClick={() => actions.enable.mutate(item.entityId)}><Check /> ENABLE</button></div> : <button type="button" className="kds-disable-button" onClick={() => setSelected(item)}><Clock3 /> TEMPORARILY DISABLE</button>}</article>)}</div> : <EmptyState title="No matching items" message="Try another product, variant or modifier name." />}<BottomSheet open={Boolean(selected)} onClose={() => setSelected(undefined)} title={`DISABLE ${selected?.name.toUpperCase() ?? 'ITEM'}?`}><div className="kds-sheet-body"><p className="kds-availability-impact"><AlertTriangle /> Customer menu and existing-cart revalidation update from this backend availability record.</p><div className="kds-duration-grid" role="radiogroup" aria-label="Unavailable duration">{durations.map((option) => <button type="button" role="radio" aria-checked={duration === option.value} className={duration === option.value ? 'active' : ''} key={String(option.value)} onClick={() => setDuration(option.value)}>{option.label}</button>)}</div><TextInput label="Reason" value={reason} onChange={(event) => setReason(event.target.value)} /><div className="kds-sheet-actions"><SecondaryButton onClick={() => setSelected(undefined)}>CANCEL</SecondaryButton><PrimaryButton disabled={actions.availability.isPending} onClick={disable}>CONFIRM DISABLE</PrimaryButton></div></div></BottomSheet></section>
+}

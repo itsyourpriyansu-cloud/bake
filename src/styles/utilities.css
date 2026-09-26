@@ -1,0 +1,9 @@
+.eyebrow { font: 700 .74rem/1.2 var(--font-body); letter-spacing: .13em; text-transform: uppercase; }
+.brand-lockup { display: flex; align-items: center; gap: .7rem; font: 700 1.05rem/1 var(--font-display); letter-spacing: .04em; }
+.brand-lockup-link { display: inline-flex; align-items: center; text-decoration: none; }
+.logo-wave { display: inline-flex; place-items: center; border-radius: 13px; transform: rotate(-3deg); transition: transform .2s ease; }
+.logo-wave:hover { transform: rotate(0deg) scale(1.04); }
+.pw-logo-mark { flex-shrink: 0; box-shadow: 0 4px 14px rgba(253, 126, 59, 0.25); }
+.pw-logo-horizontal { font-family: var(--font-display); }
+.text-link { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+

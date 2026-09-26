@@ -1,0 +1,13 @@
+node_modules
+dist
+.env
+.env.local
+coverage
+*.log
+backend/.venv/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/pizza_wave.db
+**/__pycache__/
+*.py[cod]

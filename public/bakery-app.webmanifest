@@ -1,0 +1,13 @@
+{
+  "name": "The Bakery Wave",
+  "short_name": "Bakery Wave",
+  "description": "Custom celebration cakes and fresh daily bakes from Grand Road, Cuttack.",
+  "start_url": "/bakery/app/",
+  "scope": "/bakery/app/",
+  "display": "standalone",
+  "background_color": "#FFF7EF",
+  "theme_color": "#FFD51C",
+  "icons": [
+    { "src": "/assets/bakery/brand/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

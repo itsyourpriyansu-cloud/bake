@@ -1,0 +1,7 @@
+:root {
+  --wave-orange: #fd7e3b; --wave-burgundy: #4d0711; --wave-yellow: #fdcc3b; --wave-sky: #8bdffa;
+  --wave-pink: #faaedc; --wave-green: #c1cc52; --wave-red: #bd1f17; --wave-cream: #fefef6;
+  --white: #fff; --muted: #78666a; --line: rgba(77, 7, 17, .14); --shadow: 0 16px 40px rgba(77, 7, 17, .10);
+  --font-display: 'Phudu', sans-serif; --font-body: 'Poppins', sans-serif;
+  --radius-sm: 10px; --radius-input: 14px; --radius-button: 16px; --radius-card: 24px; --radius-editorial: 32px;
+}

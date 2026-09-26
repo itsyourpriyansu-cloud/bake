@@ -1,0 +1,8 @@
+.demo-toolbar.open { max-height: min(78vh, 680px); overflow-y: auto; }
+.demo-control-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: .5rem; padding-top: .45rem; border-top: 1px solid var(--line); }
+.demo-control-row label { display: grid; gap: .25rem; color: var(--muted); font-size: .7rem; font-weight: 700; }
+.demo-control-row select { min-height: 42px; border: 1px solid var(--line); border-radius: 12px; padding: 0 .6rem; color: var(--wave-burgundy); background: var(--wave-cream); font: 600 .72rem var(--font-body); }
+.demo-control-row .button { min-height: 42px; margin: 0; padding-inline: .65rem; }
+.demo-button-pair { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; }
+.demo-button-pair .button { min-height: 44px; margin-top: .35rem; padding-inline: .45rem; font-size: .62rem; }
+.demo-live-state { margin: .45rem 0 0; padding: .55rem; border-radius: 10px; color: var(--wave-cream); background: var(--wave-burgundy); font-size: .68rem; font-weight: 600; text-align: center; }
