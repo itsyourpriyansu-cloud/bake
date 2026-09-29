@@ -49,7 +49,7 @@ export function BakeryHomePage() {
 
   useEffect(() => {
     if (carouselHovering || carouselFocused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const timer = window.setInterval(() => setActiveSlide((current) => (current + 1) % heroSlides.length), 4800)
+    const timer = window.setInterval(() => setActiveSlide((current) => (current + 1) % heroSlides.length), 5000)
     return () => window.clearInterval(timer)
   }, [activeSlide, carouselFocused, carouselHovering])
 
