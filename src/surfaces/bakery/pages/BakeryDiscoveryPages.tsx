@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Baby, BriefcaseBusiness, CakeSlice, CalendarDays, Check, ChevronLeft, ChevronRight, Clock3, Gift, Heart, Leaf, MapPin, Palette, PartyPopper, Pause, Play, Search, Sparkles, Star } from 'lucide-react'
+import { ArrowRight, Baby, BriefcaseBusiness, CakeSlice, CalendarDays, Check, ChevronRight, Clock3, Gift, Heart, Leaf, MapPin, Palette, PartyPopper, Search, Sparkles, Star } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { useBakeryCartActions, useBakeryCatalog, useBakeryProduct } from '../../../features/bakery/useBakery'
@@ -28,14 +28,14 @@ const styles: Array<{ id: BakeryStyle; label: string; description: string; image
 const marqueeItems = ['MADE FRESH FOR YOUR ORDER', 'EGGLESS OPTION AVAILABLE', 'DELIVERY AND PICKUP', 'MADE WITH CARE IN CUTTACK']
 
 const heroSlides = [
-  { title: 'Birthday Celebration Cake', description: 'Bright colours for a joyful birthday.', price: 'From ₹899', image: bakeryAssets.hero, href: '/bakery/app/design/cake-vintage-heart' },
+  { title: 'Custom Birthday Cake', description: 'Bright colours you can personalise for the celebration.', price: 'From ₹899', image: bakeryAssets.hero, href: '/bakery/app/design/cake-vintage-heart' },
   { title: 'Heart-Shaped Cake', description: 'A classic choice for birthdays and anniversaries.', price: 'From ₹749', image: bakeryAssets.product.vintage, href: '/bakery/app/product/cake-vintage-heart' },
   { title: 'Flower Celebration Cake', description: 'Soft colours with handcrafted flowers.', price: 'From ₹999', image: bakeryAssets.product.floral, href: '/bakery/app/product/cake-floral-lavender' },
   { title: 'Chocolate Truffle Cake', description: 'Rich chocolate with a smooth, creamy finish.', price: 'From ₹849', image: bakeryAssets.product.chocolate, href: '/bakery/app/product/cake-chocolate-truffle' },
-  { title: 'Dark Chocolate Cake', description: 'A full chocolate cake for family celebrations.', price: 'From ₹799', image: '/assets/bakery/gallery/dark-truffle.webp', href: '/bakery/app/product/cake-chocolate-truffle' },
-  { title: 'Chocolate Birthday Cake', description: 'Simple, familiar and easy to personalise.', price: 'From ₹699', image: '/assets/bakery/gallery/minimal-white.webp', href: '/bakery/app/cakes' },
-  { title: 'Layered Coffee Cake', description: 'Light layers for a small get-together.', price: 'From ₹549', image: '/assets/bakery/gallery/berry-layer.webp', href: '/bakery/app/cakes' },
-  { title: 'Strawberry Cupcakes', description: 'Easy-to-share treats for parties and gifting.', price: 'From ₹299', image: '/assets/bakery/gallery/pastel-party.webp', href: '/bakery/app/bakes' },
+  { title: 'Cherry Black Forest', description: 'Chocolate, whipped cream and cherries for family celebrations.', price: 'From ₹549', image: '/assets/bakery/gallery/dark-truffle.webp', href: '/bakery/app/product/cake-black-forest' },
+  { title: 'Memory Photo Cake', description: 'A personal photo cake with a clean, modern finish.', price: 'From ₹799', image: '/assets/bakery/gallery/minimal-white.webp', href: '/bakery/app/product/cake-photo' },
+  { title: 'Rasmalai Celebration Cake', description: 'Saffron cream and cardamom sponge for a special occasion.', price: 'From ₹749', image: '/assets/bakery/gallery/berry-layer.webp', href: '/bakery/app/product/cake-rasmalai' },
+  { title: 'Little Celebration Box', description: 'Cupcakes, brownies and a card for parties and gifting.', price: 'From ₹599', image: '/assets/bakery/gallery/pastel-party.webp', href: '/bakery/app/product/gift-celebration' },
 ] as const
 
 const heroTitleWords = ['YOUR', 'CAKE,', 'MADE', 'YOUR', 'WAY.']
@@ -43,16 +43,15 @@ const heroTitleWords = ['YOUR', 'CAKE,', 'MADE', 'YOUR', 'WAY.']
 export function BakeryHomePage() {
   const catalog = useBakeryCatalog(); const customer = readBakeryCustomer(); const products = catalog.data?.products ?? []
   const [fulfillment, setFulfillment] = useState<'DELIVERY' | 'PICKUP'>('DELIVERY'); const [fulfillmentOpen, setFulfillmentOpen] = useState(false)
-  const [activeSlide, setActiveSlide] = useState(0); const [carouselPaused, setCarouselPaused] = useState(false); const [carouselHovering, setCarouselHovering] = useState(false); const [carouselFocused, setCarouselFocused] = useState(false)
-  const homeRef = useRef<HTMLDivElement>(null); const pointerStartX = useRef(0)
+  const [activeSlide, setActiveSlide] = useState(0); const [carouselHovering, setCarouselHovering] = useState(false); const [carouselFocused, setCarouselFocused] = useState(false)
+  const homeRef = useRef<HTMLDivElement>(null)
   const best = products.filter((product) => product.bestseller).slice(0, 4); const ready = products.filter((product) => product.readyToday && product.category !== 'CAKES').slice(0, 4)
 
-  const showSlide = (index: number) => setActiveSlide((index + heroSlides.length) % heroSlides.length)
   useEffect(() => {
-    if (carouselPaused || carouselHovering || carouselFocused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (carouselHovering || carouselFocused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const timer = window.setInterval(() => setActiveSlide((current) => (current + 1) % heroSlides.length), 4800)
     return () => window.clearInterval(timer)
-  }, [activeSlide, carouselFocused, carouselHovering, carouselPaused])
+  }, [activeSlide, carouselFocused, carouselHovering])
 
   useGSAP(() => {
     const media = gsap.matchMedia()
@@ -88,13 +87,10 @@ export function BakeryHomePage() {
         <div className="bakery-hero-actions"><Link className="bakery-button primary" to="/bakery/app/design/cake-vintage-heart">DESIGN A CAKE <ArrowRight /></Link><Link className="bakery-button secondary" to="/bakery/app/cakes">SHOP ALL CAKES</Link></div>
         <div className="bakery-hero-assurance" aria-label="Ordering information"><span><Check />Eggless option available</span><span><Clock3 />Preparation time shown clearly</span></div>
       </div>
-      <div className="bakery-app-hero-art bakery-cake-carousel" role="region" aria-roledescription="carousel" aria-label="Featured cakes" onMouseEnter={() => setCarouselHovering(true)} onMouseLeave={() => setCarouselHovering(false)} onFocusCapture={() => setCarouselFocused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setCarouselFocused(false) }} onPointerDown={(event) => { pointerStartX.current = event.clientX }} onPointerUp={(event) => { const distance = event.clientX - pointerStartX.current; if (Math.abs(distance) > 42) showSlide(activeSlide + (distance < 0 ? 1 : -1)) }}>
+      <div className="bakery-app-hero-art bakery-cake-carousel" role="region" aria-roledescription="carousel" aria-label="Featured cakes" onMouseEnter={() => setCarouselHovering(true)} onMouseLeave={() => setCarouselHovering(false)} onFocusCapture={() => setCarouselFocused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setCarouselFocused(false) }}>
         <Link className="bakery-cake-slide-link" to={activeCake.href} aria-label={`View ${activeCake.title}`}>
           {heroSlides.map((slide, index) => <figure className={`bakery-cake-slide ${index === activeSlide ? 'is-active' : ''}`} aria-hidden={index !== activeSlide} key={slide.title}><img src={slide.image} alt={index === activeSlide ? slide.title : ''} loading={index === 0 ? 'eager' : 'lazy'} /><figcaption><span>{slide.price}</span><strong>{slide.title}</strong><small>{slide.description}</small></figcaption></figure>)}
         </Link>
-        <div className="bakery-cake-carousel-controls"><button type="button" onClick={() => showSlide(activeSlide - 1)} aria-label="Show previous cake"><ChevronLeft /></button><span aria-live="polite"><b>{String(activeSlide + 1).padStart(2, '0')}</b> / {String(heroSlides.length).padStart(2, '0')}</span><button type="button" onClick={() => showSlide(activeSlide + 1)} aria-label="Show next cake"><ChevronRight /></button><button className="bakery-carousel-toggle" type="button" aria-pressed={carouselPaused} onClick={() => setCarouselPaused((value) => !value)}>{carouselPaused ? <Play /> : <Pause />}<span>{carouselPaused ? 'Play' : 'Pause'}</span></button></div>
-        <div className="bakery-cake-thumbnails" aria-label="Choose a featured cake">{heroSlides.map((slide, index) => <button type="button" className={index === activeSlide ? 'active' : ''} aria-current={index === activeSlide ? 'true' : undefined} aria-label={`Show ${slide.title}`} onClick={() => showSlide(index)} key={slide.title}><img src={slide.image} alt="" /></button>)}</div>
-        {!carouselPaused && !carouselHovering && !carouselFocused && <span className="bakery-carousel-progress" key={activeSlide} aria-hidden="true" />}
       </div>
     </section>
     <div className="bakery-trust-marquee" aria-label="Bakery promises"><div>{[...marqueeItems, ...marqueeItems].map((item, index) => <span key={`${item}-${index}`}><i aria-hidden="true" />{item}</span>)}</div></div>

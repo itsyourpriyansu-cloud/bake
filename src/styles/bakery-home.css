@@ -16,33 +16,16 @@
 .bakery-hero-assurance span{display:flex;align-items:center;gap:.55rem;color:#5d4943;font-size:.69rem;font-weight:650}
 .bakery-hero-assurance svg{width:16px;height:16px;color:#207442;stroke-width:2.3}
 
-.bakery-app-hero-art.bakery-cake-carousel{position:relative;min-width:0;min-height:610px;background:#24110e;touch-action:pan-y;user-select:none}
-.bakery-cake-slide-link{position:absolute;inset:0;display:block;color:#fff}
+.bakery-app-hero-art.bakery-cake-carousel{position:relative;min-width:0;min-height:610px;background:#24110e;user-select:none}
+.bakery-cake-slide-link{position:absolute;inset:0;display:block;color:#fff;cursor:pointer}
 .bakery-cake-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .45s ease,visibility .45s ease}
 .bakery-cake-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}
 .bakery-cake-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,10,8,.08) 20%,rgba(25,10,8,.1) 48%,rgba(25,10,8,.82) 100%)}
 .bakery-cake-slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.04) contrast(1.02);will-change:transform,opacity}
-.bakery-cake-slide figcaption{position:absolute;z-index:2;left:clamp(1.2rem,3vw,2.2rem);right:clamp(1.2rem,3vw,2.2rem);bottom:112px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:.2rem 1rem;color:#fff;text-shadow:0 2px 18px rgba(18,7,5,.45)}
+.bakery-cake-slide figcaption{position:absolute;z-index:2;left:clamp(1.2rem,3vw,2.2rem);right:clamp(1.2rem,3vw,2.2rem);bottom:32px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:.2rem 1rem;color:#fff;text-shadow:0 2px 18px rgba(18,7,5,.45)}
 .bakery-cake-slide figcaption>span{grid-column:2;grid-row:1/3;align-self:end;padding:.5rem .65rem;border:1px solid rgba(255,255,255,.46);border-radius:999px;background:rgba(39,16,12,.62);backdrop-filter:blur(12px);font-size:.63rem;font-weight:800;text-shadow:none}
 .bakery-cake-slide figcaption>strong{font-family:var(--bakery-display);font-size:clamp(1.8rem,3.1vw,3rem);font-weight:400;line-height:.95}
 .bakery-cake-slide figcaption>small{font-size:.75rem;color:#f5eae6;line-height:1.45}
-.bakery-cake-carousel-controls{position:absolute;z-index:5;top:18px;right:18px;display:flex;align-items:center;gap:.25rem;padding:.3rem;border:1px solid rgba(255,255,255,.32);border-radius:999px;background:rgba(37,15,11,.68);color:#fff;box-shadow:0 9px 30px rgba(20,7,5,.22);backdrop-filter:blur(14px)}
-.bakery-cake-carousel-controls button{width:38px;height:38px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:#fff;cursor:pointer;transition:background-color .2s ease,transform .2s ease}
-.bakery-cake-carousel-controls button:hover{background:rgba(255,255,255,.14)}
-.bakery-cake-carousel-controls button:active{transform:scale(.94)}
-.bakery-cake-carousel-controls button svg{width:17px;height:17px}
-.bakery-cake-carousel-controls>span{min-width:54px;text-align:center;font-size:.6rem;color:#d9cbc6}
-.bakery-cake-carousel-controls>span b{color:#fff;font-size:.72rem}
-.bakery-cake-carousel-controls .bakery-carousel-toggle{width:auto;grid-template-columns:auto auto;gap:.35rem;padding:0 .7rem;border-left:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:.58rem;font-weight:750}
-.bakery-cake-carousel-controls .bakery-carousel-toggle svg{width:14px;height:14px}
-.bakery-cake-thumbnails{position:absolute;z-index:5;left:18px;right:18px;bottom:18px;display:flex;gap:.45rem;overflow-x:auto;padding:.35rem;border:1px solid rgba(255,255,255,.28);border-radius:17px;background:rgba(39,16,12,.54);backdrop-filter:blur(14px);scrollbar-width:none}
-.bakery-cake-thumbnails::-webkit-scrollbar{display:none}
-.bakery-cake-thumbnails button{width:58px;height:58px;flex:0 0 58px;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;background:#2f1713;opacity:.64;cursor:pointer;transition:opacity .22s ease,border-color .22s ease,transform .22s ease}
-.bakery-cake-thumbnails button.active{border-color:var(--bakery-yellow);opacity:1;transform:translateY(-2px)}
-.bakery-cake-thumbnails img{width:100%;height:100%;object-fit:cover}
-.bakery-carousel-progress{position:absolute;z-index:6;left:0;bottom:0;width:100%;height:4px;transform-origin:left;background:var(--bakery-yellow);animation:bakery-carousel-progress 4.8s linear forwards}
-@keyframes bakery-carousel-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
 .bakery-trust-marquee{margin-top:1.25rem;border-block:0;border-radius:14px;background:#2f1512;color:#fff}
 .bakery-trust-marquee span{gap:.85rem;padding:.8rem 2.25rem;font-size:.64rem;letter-spacing:.06em}
 .bakery-trust-marquee i{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--bakery-yellow)}
@@ -85,6 +68,7 @@
 .bakery-points-card a svg{width:16px;height:16px;color:currentColor}
 
 @media(hover:hover){
+  .bakery-cake-slide-link:hover .bakery-cake-slide.is-active img{transform:scale(1.025)}
   .bakery-hero-actions .bakery-button:hover{transform:translateY(-2px)}
   .bakery-hero-actions .bakery-button.primary:hover{box-shadow:0 10px 0 #321713}
   .bakery-event-grid a:hover{z-index:1;filter:saturate(1.08);transform:scale(1.025)}
@@ -111,16 +95,10 @@
   .bakery-hero-actions .bakery-button.primary{box-shadow:0 5px 0 #321713}
   .bakery-app-hero-copy>.bakery-hero-assurance{display:grid;align-items:start;gap:.45rem;margin-top:1.3rem;padding-top:1rem}
   .bakery-hero-assurance span{font-size:.62rem}
-  .bakery-cake-slide figcaption{left:1rem;right:1rem;bottom:89px;grid-template-columns:1fr auto}
+  .bakery-cake-slide figcaption{left:1rem;right:1rem;bottom:22px;grid-template-columns:1fr auto}
   .bakery-cake-slide figcaption>strong{font-size:1.55rem}
   .bakery-cake-slide figcaption>small{max-width:220px;font-size:.64rem}
   .bakery-cake-slide figcaption>span{padding:.4rem .52rem;font-size:.55rem}
-  .bakery-cake-carousel-controls{top:12px;right:12px}
-  .bakery-cake-carousel-controls button{width:34px;height:34px}
-  .bakery-cake-carousel-controls>span{min-width:46px}
-  .bakery-cake-carousel-controls .bakery-carousel-toggle{padding:0 .55rem}
-  .bakery-cake-thumbnails{left:12px;right:12px;bottom:12px;gap:.35rem;padding:.3rem;border-radius:14px}
-  .bakery-cake-thumbnails button{width:50px;height:50px;flex-basis:50px;border-radius:10px}
   .bakery-trust-marquee{margin:1rem .75rem 0;border-radius:12px}
   .bakery-trust-marquee span{padding:.7rem 1.4rem;font-size:.56rem}
   .bakery-home-section,.bakery-order-paths{padding:4.8rem 1rem 0}
@@ -150,12 +128,9 @@
 @media(max-width:390px){
   .bakery-app-hero-art.bakery-cake-carousel{height:345px;min-height:345px}
   .bakery-app-hero-copy h1{font-size:2.9rem}
-  .bakery-cake-carousel-controls .bakery-carousel-toggle span{display:none}
-  .bakery-cake-carousel-controls .bakery-carousel-toggle{width:34px;padding:0;border-left:0}
   .bakery-cake-slide figcaption>small{display:none}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .bakery-cake-slide,.bakery-cake-slide img,.bakery-cake-thumbnails button,.bakery-event-grid a,.bakery-order-paths a,.bakery-style-grid img,.bakery-builder-banner img{transition:none!important}
-  .bakery-carousel-progress{display:none}
+  .bakery-cake-slide,.bakery-cake-slide img,.bakery-event-grid a,.bakery-order-paths a,.bakery-style-grid img,.bakery-builder-banner img{transition:none!important}
 }
