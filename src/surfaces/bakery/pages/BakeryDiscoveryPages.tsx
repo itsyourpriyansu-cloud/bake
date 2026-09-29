@@ -83,7 +83,7 @@ export function BakeryHomePage() {
     <section className="bakery-app-hero" aria-labelledby="bakery-home-title">
       <div className="bakery-app-hero-copy">
         <span className="bakery-kicker">CAKES FOR EVERY CELEBRATION</span>
-        <h1 id="bakery-home-title" aria-label="Your cake, made your way.">{heroTitleWords.map((word) => <span className="bakery-hero-title-word" key={word}>{word}{' '}</span>)}</h1>
+        <h1 id="bakery-home-title" aria-label="Your cake, made your way.">{heroTitleWords.map((word, index) => <span className="bakery-hero-title-word" key={`${word}-${index}`}>{word}{' '}</span>)}</h1>
         <p>Choose a ready cake or customise the size, flavour, colour and message.</p>
         <div className="bakery-hero-actions"><Link className="bakery-button primary" to="/bakery/app/design/cake-vintage-heart">DESIGN A CAKE <ArrowRight /></Link><Link className="bakery-button secondary" to="/bakery/app/cakes">SHOP ALL CAKES</Link></div>
         <div className="bakery-hero-assurance" aria-label="Ordering information"><span><Check />Eggless option available</span><span><Clock3 />Preparation time shown clearly</span></div>
