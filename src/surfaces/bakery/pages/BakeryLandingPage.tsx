@@ -24,8 +24,8 @@ export default function BakeryLandingPage() {
       </div></section>
       <section className="bakery-editorial-band" id="how"><div><span className="bakery-kicker">CUSTOMISE YOUR CAKE</span><h2>YOUR IDEA.<br />MADE BY US.</h2><p>Choose the occasion, cake style, number of servings, flavour and message.</p><Link className="bakery-button primary" to="/bakery/app/design/cake-floral-lavender">OPEN THE CAKE DESIGNER</Link></div><ol><li><b>1</b><span>Choose a cake style</span></li><li><b>2</b><span>Select the size and flavour</span></li><li><b>3</b><span>Add your date and message</span></li><li><b>4</b><span>Review the price and order</span></li></ol></section>
       <section className="bakery-landing-section" id="daily"><span className="bakery-kicker">NOT JUST BIG OCCASIONS</span><h2>BAKED HERE. LOVED DAILY.</h2><div className="bakery-category-cloud"><Link to="/bakery/app/bakes">PASTRIES <b>12</b></Link><Link to="/bakery/app/bakes">BROWNIES <b>8</b></Link><Link to="/bakery/app/bakes">BREADS <b>6</b></Link><Link to="/bakery/app/bakes">SAVOURIES <b>9</b></Link><Link to="/bakery/app/cakes">CAKES <b>27</b></Link></div></section>
-      <section className="bakery-visit" id="visit"><Truck /><div><span className="bakery-kicker">GRAND ROAD · CUTTACK</span><h2>PICK UP FRESH OR LET US BRING IT.</h2><p>Same-day favourites, scheduled celebration cakes and careful delivery.</p></div><Link className="bakery-button secondary" to="/bakery/app/">START AN ORDER</Link></section>
+      <section className="bakery-visit" id="visit"><Truck /><div><span className="bakery-kicker">GRAND ROAD · HYDERABAD</span><h2>PICK UP FRESH OR LET US BRING IT.</h2><p>Same-day favourites, scheduled celebration cakes and careful delivery.</p></div><Link className="bakery-button secondary" to="/bakery/app/">START AN ORDER</Link></section>
     </main>
-    <footer className="bakery-site-footer"><BakeryLogo /><p>Prototype bakery experience · Grand Road, Cuttack</p><Link to="/">Back to Pizza Wave</Link></footer>
+    <footer className="bakery-site-footer"><BakeryLogo /><p>Prototype bakery experience · Grand Road, Hyderabad</p><Link to="/">Back to Pizza Wave</Link></footer>
   </div>
 }

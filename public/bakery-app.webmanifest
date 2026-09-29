@@ -1,7 +1,7 @@
 {
   "name": "The Bakery Wave",
   "short_name": "Bakery Wave",
-  "description": "Custom celebration cakes and fresh daily bakes from Grand Road, Cuttack.",
+  "description": "Custom celebration cakes and fresh daily bakes from Grand Road, Hyderabad.",
   "start_url": "/bakery/app/",
   "scope": "/bakery/app/",
   "display": "standalone",

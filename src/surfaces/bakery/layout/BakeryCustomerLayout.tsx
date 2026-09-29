@@ -20,7 +20,7 @@ export default function BakeryCustomerLayout() {
       <div className="bakery-offer-window">
         <div className="bakery-offer-track">
           {[0, 1].map((group) => <div className="bakery-offer-group" aria-hidden={group === 1} key={group}>
-            <span><strong>15% OFF</strong> ON ORDERS OF ₹1000 OR MORE</span><i aria-hidden="true" /><span>FRESHLY MADE IN CUTTACK</span><i aria-hidden="true" />
+            <span><strong>15% OFF</strong> ON ORDERS OF ₹1000 OR MORE</span><i aria-hidden="true" /><span>FRESHLY MADE IN HYDERABAD</span><i aria-hidden="true" />
           </div>)}
         </div>
       </div>
