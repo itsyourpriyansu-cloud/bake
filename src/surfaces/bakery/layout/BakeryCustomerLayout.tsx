@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarHeart, Home, PackageCheck, Search, ShoppingBag, Sparkles, UserRound } from 'lucide-react'
+import { CalendarHeart, Home, PackageCheck, Search, ShoppingBag, Sparkles, UserRound } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
@@ -24,7 +24,6 @@ export default function BakeryCustomerLayout() {
           </div>)}
         </div>
       </div>
-      <Link className="bakery-offer-action" to="/bakery/app/cakes">SHOP OFFER <ArrowRight /></Link>
     </div>
     <header className="bakery-app-header"><Link to="/bakery/app/"><BakeryLogo /></Link><nav><NavLink to="/bakery/app/cakes">CAKES</NavLink><NavLink to="/bakery/app/bakes">DAILY BAKES</NavLink><NavLink to="/bakery/app/celebrations">CELEBRATIONS</NavLink></nav><div className="bakery-head-actions"><Link aria-label="Search" to="/bakery/app/search"><Search /></Link><Link className="bakery-cart-head" aria-label={`${count} items in cart`} to="/bakery/app/cart"><ShoppingBag /><b>{count}</b></Link></div></header>
     <main className="bakery-app-main"><Outlet /></main>
