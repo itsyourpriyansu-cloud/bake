@@ -12,6 +12,7 @@ import '@fontsource/geist/700.css'
 import './styles/globals.css'
 import './styles/bakery.css'
 import './styles/bakery-operations.css'
+import './styles/bakery-home.css'
 import { AppProviders } from './app/providers/AppProviders'
 import { AppRouter } from './app/router/AppRouter'
 

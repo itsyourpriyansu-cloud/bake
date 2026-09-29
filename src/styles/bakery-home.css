@@ -1,0 +1,161 @@
+/* Customer home: cake-led discovery and clear ordering language */
+.bakery-home{overflow-x:hidden;width:100%;max-width:100%}
+.bakery-app-hero{isolation:isolate;min-height:610px;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);border:1px solid rgba(50,23,19,.12);border-radius:36px;background:linear-gradient(145deg,#fffdf9 0%,#fff6ed 100%);box-shadow:0 24px 70px rgba(72,39,30,.1)}
+.bakery-app-hero-copy{position:relative;z-index:2;padding:clamp(2.5rem,4vw,3.25rem);background:radial-gradient(circle at 10% 10%,rgba(255,213,25,.22),transparent 34%),linear-gradient(150deg,#fffdf9 0%,#fff7ef 100%)}
+.bakery-app-hero-copy .bakery-kicker{color:#7c5146;font-size:.7rem;letter-spacing:.13em}
+.bakery-app-hero-copy h1{width:100%;max-width:64rem;margin:.85rem 0 1.1rem;font-size:clamp(3.25rem,4.3vw,4.5rem);line-height:.88;letter-spacing:-.025em}
+.bakery-hero-title-word{display:inline-block;will-change:transform,opacity}
+.bakery-hero-title-word:not(:last-child){margin-right:.16em}
+.bakery-app-hero-copy>p{max-width:520px;margin:0;color:#6f5b54;font-size:1rem;line-height:1.65}
+.bakery-app-hero-copy>.bakery-hero-actions{display:flex;flex-flow:row wrap;align-items:center;gap:.75rem;margin-top:1.45rem}
+.bakery-hero-actions .bakery-button{min-height:52px;padding:.8rem 1.15rem;border-width:1.5px;border-radius:15px;box-shadow:none;font-size:.68rem;letter-spacing:.035em;transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+.bakery-hero-actions .bakery-button.primary{box-shadow:0 7px 0 #321713}
+.bakery-hero-actions .bakery-button.secondary{background:#fff;color:var(--bakery-chocolate)}
+.bakery-hero-actions .bakery-button svg{width:17px}
+.bakery-app-hero-copy>.bakery-hero-assurance{display:grid;grid-template-columns:1fr;gap:.55rem;margin-top:1.65rem;padding-top:1.2rem;border-top:1px solid rgba(50,23,19,.12)}
+.bakery-hero-assurance span{display:flex;align-items:center;gap:.55rem;color:#5d4943;font-size:.69rem;font-weight:650}
+.bakery-hero-assurance svg{width:16px;height:16px;color:#207442;stroke-width:2.3}
+
+.bakery-app-hero-art.bakery-cake-carousel{position:relative;min-width:0;min-height:610px;background:#24110e;touch-action:pan-y;user-select:none}
+.bakery-cake-slide-link{position:absolute;inset:0;display:block;color:#fff}
+.bakery-cake-slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .45s ease,visibility .45s ease}
+.bakery-cake-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}
+.bakery-cake-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,10,8,.08) 20%,rgba(25,10,8,.1) 48%,rgba(25,10,8,.82) 100%)}
+.bakery-cake-slide img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.04) contrast(1.02);will-change:transform,opacity}
+.bakery-cake-slide figcaption{position:absolute;z-index:2;left:clamp(1.2rem,3vw,2.2rem);right:clamp(1.2rem,3vw,2.2rem);bottom:112px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:.2rem 1rem;color:#fff;text-shadow:0 2px 18px rgba(18,7,5,.45)}
+.bakery-cake-slide figcaption>span{grid-column:2;grid-row:1/3;align-self:end;padding:.5rem .65rem;border:1px solid rgba(255,255,255,.46);border-radius:999px;background:rgba(39,16,12,.62);backdrop-filter:blur(12px);font-size:.63rem;font-weight:800;text-shadow:none}
+.bakery-cake-slide figcaption>strong{font-family:var(--bakery-display);font-size:clamp(1.8rem,3.1vw,3rem);font-weight:400;line-height:.95}
+.bakery-cake-slide figcaption>small{font-size:.75rem;color:#f5eae6;line-height:1.45}
+.bakery-cake-carousel-controls{position:absolute;z-index:5;top:18px;right:18px;display:flex;align-items:center;gap:.25rem;padding:.3rem;border:1px solid rgba(255,255,255,.32);border-radius:999px;background:rgba(37,15,11,.68);color:#fff;box-shadow:0 9px 30px rgba(20,7,5,.22);backdrop-filter:blur(14px)}
+.bakery-cake-carousel-controls button{width:38px;height:38px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:#fff;cursor:pointer;transition:background-color .2s ease,transform .2s ease}
+.bakery-cake-carousel-controls button:hover{background:rgba(255,255,255,.14)}
+.bakery-cake-carousel-controls button:active{transform:scale(.94)}
+.bakery-cake-carousel-controls button svg{width:17px;height:17px}
+.bakery-cake-carousel-controls>span{min-width:54px;text-align:center;font-size:.6rem;color:#d9cbc6}
+.bakery-cake-carousel-controls>span b{color:#fff;font-size:.72rem}
+.bakery-cake-carousel-controls .bakery-carousel-toggle{width:auto;grid-template-columns:auto auto;gap:.35rem;padding:0 .7rem;border-left:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:.58rem;font-weight:750}
+.bakery-cake-carousel-controls .bakery-carousel-toggle svg{width:14px;height:14px}
+.bakery-cake-thumbnails{position:absolute;z-index:5;left:18px;right:18px;bottom:18px;display:flex;gap:.45rem;overflow-x:auto;padding:.35rem;border:1px solid rgba(255,255,255,.28);border-radius:17px;background:rgba(39,16,12,.54);backdrop-filter:blur(14px);scrollbar-width:none}
+.bakery-cake-thumbnails::-webkit-scrollbar{display:none}
+.bakery-cake-thumbnails button{width:58px;height:58px;flex:0 0 58px;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;background:#2f1713;opacity:.64;cursor:pointer;transition:opacity .22s ease,border-color .22s ease,transform .22s ease}
+.bakery-cake-thumbnails button.active{border-color:var(--bakery-yellow);opacity:1;transform:translateY(-2px)}
+.bakery-cake-thumbnails img{width:100%;height:100%;object-fit:cover}
+.bakery-carousel-progress{position:absolute;z-index:6;left:0;bottom:0;width:100%;height:4px;transform-origin:left;background:var(--bakery-yellow);animation:bakery-carousel-progress 4.8s linear forwards}
+@keyframes bakery-carousel-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+.bakery-trust-marquee{margin-top:1.25rem;border-block:0;border-radius:14px;background:#2f1512;color:#fff}
+.bakery-trust-marquee span{gap:.85rem;padding:.8rem 2.25rem;font-size:.64rem;letter-spacing:.06em}
+.bakery-trust-marquee i{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--bakery-yellow)}
+.bakery-home-section,.bakery-order-paths{padding-top:clamp(5rem,9vw,8.5rem)}
+.bakery-section-title{gap:2rem;margin-bottom:2rem}
+.bakery-section-title>div{max-width:780px}
+.bakery-section-title span{color:#82584d;font-size:.62rem;letter-spacing:.12em}
+.bakery-section-title h2{max-width:850px;font-size:clamp(2.5rem,4.6vw,4.8rem);line-height:.92;letter-spacing:-.02em}
+.bakery-section-title>a{min-height:42px;display:inline-flex;align-items:center;padding:.65rem .85rem;border:1px solid var(--bakery-chocolate);border-radius:999px;white-space:nowrap}
+
+.bakery-event-grid{grid-auto-flow:dense;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:2px solid var(--bakery-chocolate);border-radius:28px;overflow:hidden;background:var(--bakery-chocolate)}
+.bakery-event-grid a{min-height:180px;border:0;border-right:2px solid var(--bakery-chocolate);border-bottom:2px solid var(--bakery-chocolate);border-radius:0;padding:1.35rem;transition:transform .35s ease,filter .35s ease}
+.bakery-event-grid a:nth-child(3n){border-right:0}
+.bakery-event-grid a:nth-child(n+4){border-bottom:0}
+.bakery-event-grid a span{width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(50,23,19,.28);border-radius:50%;background:rgba(255,255,255,.42)}
+.bakery-event-grid a span svg{width:23px;height:23px;stroke-width:1.8}
+.bakery-event-grid a b{max-width:150px;font-size:1.55rem;line-height:1}
+
+.bakery-order-paths>div:last-child{border-radius:28px;background:#fffdf9;box-shadow:0 18px 60px rgba(59,30,23,.08)}
+.bakery-order-paths a{min-height:116px;padding:1.35rem 1.5rem;transition:background-color .25s ease,transform .25s ease}
+.bakery-order-paths a>b{width:42px;height:42px;background:#fff1a4}
+.bakery-order-paths strong{font-size:.76rem;letter-spacing:.02em}
+.bakery-order-paths small{max-width:320px;font-size:.7rem;line-height:1.45}
+
+.bakery-style-grid{gap:0;border:2px solid var(--bakery-chocolate);border-radius:28px;overflow:hidden;background:var(--bakery-chocolate)}
+.bakery-style-grid a{min-height:470px;border-radius:0;border-right:2px solid var(--bakery-chocolate)}
+.bakery-style-grid a:last-child{border-right:0}
+.bakery-style-grid img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.bakery-style-grid a::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(40,17,13,.52));pointer-events:none}
+.bakery-style-grid a>span{z-index:2;padding:1.05rem 1.1rem;border:1px solid rgba(255,255,255,.72);box-shadow:0 12px 30px rgba(43,20,16,.15)}
+.bakery-style-grid b{font-size:1.55rem}
+.bakery-style-grid small{margin-top:.25rem;font-size:.68rem;line-height:1.45}
+
+.bakery-builder-banner{margin-top:clamp(5rem,10vw,9rem);grid-template-columns:1fr 1fr;border-radius:32px;background:linear-gradient(135deg,#dff7ff 0%,#bcebf8 100%);box-shadow:0 22px 64px rgba(28,99,118,.13)}
+.bakery-builder-banner>div{padding:clamp(2.5rem,5vw,5rem)}
+.bakery-builder-banner h2{max-width:720px;font-size:clamp(2.7rem,4.5vw,5rem);line-height:.9;letter-spacing:-.02em}
+.bakery-builder-banner p{color:#4c5d61;line-height:1.65}
+.bakery-builder-banner img{min-height:520px;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.bakery-points-card a{display:inline-flex;align-items:center;gap:.5rem}
+.bakery-points-card a svg{width:16px;height:16px;color:currentColor}
+
+@media(hover:hover){
+  .bakery-hero-actions .bakery-button:hover{transform:translateY(-2px)}
+  .bakery-hero-actions .bakery-button.primary:hover{box-shadow:0 10px 0 #321713}
+  .bakery-event-grid a:hover{z-index:1;filter:saturate(1.08);transform:scale(1.025)}
+  .bakery-order-paths a:hover{z-index:1;background:#fff4c7;transform:translateY(-2px)}
+  .bakery-style-grid a:hover img,.bakery-builder-banner:hover img{transform:scale(1.05)}
+}
+
+@media(max-width:1024px){
+  .bakery-app-hero{grid-template-columns:minmax(350px,1fr) minmax(0,1fr);min-height:560px}
+  .bakery-app-hero-art.bakery-cake-carousel{min-height:560px}
+  .bakery-app-hero-copy h1{font-size:clamp(3rem,5.8vw,3.75rem)}
+  .bakery-style-grid a{min-height:410px}
+}
+
+@media(max-width:768px){
+  .bakery-app-hero{margin:0 .75rem;grid-template-columns:1fr;min-height:0;border-radius:26px}
+  .bakery-app-hero-art.bakery-cake-carousel{order:-1;height:365px;min-height:365px}
+  .bakery-app-hero-copy{padding:1.7rem 1.2rem 1.5rem}
+  .bakery-app-hero-copy .bakery-kicker{font-size:.58rem}
+  .bakery-app-hero-copy h1{max-width:340px;margin:.7rem 0 .85rem;font-size:clamp(2.85rem,13vw,3.65rem);line-height:.88}
+  .bakery-app-hero-copy>p{font-size:.8rem;line-height:1.55}
+  .bakery-app-hero-copy>.bakery-hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;width:100%;margin-top:1.15rem}
+  .bakery-hero-actions .bakery-button{width:100%;min-height:48px;padding:.65rem .55rem;border-radius:13px;font-size:.59rem;text-align:center}
+  .bakery-hero-actions .bakery-button.primary{box-shadow:0 5px 0 #321713}
+  .bakery-app-hero-copy>.bakery-hero-assurance{display:grid;align-items:start;gap:.45rem;margin-top:1.3rem;padding-top:1rem}
+  .bakery-hero-assurance span{font-size:.62rem}
+  .bakery-cake-slide figcaption{left:1rem;right:1rem;bottom:89px;grid-template-columns:1fr auto}
+  .bakery-cake-slide figcaption>strong{font-size:1.55rem}
+  .bakery-cake-slide figcaption>small{max-width:220px;font-size:.64rem}
+  .bakery-cake-slide figcaption>span{padding:.4rem .52rem;font-size:.55rem}
+  .bakery-cake-carousel-controls{top:12px;right:12px}
+  .bakery-cake-carousel-controls button{width:34px;height:34px}
+  .bakery-cake-carousel-controls>span{min-width:46px}
+  .bakery-cake-carousel-controls .bakery-carousel-toggle{padding:0 .55rem}
+  .bakery-cake-thumbnails{left:12px;right:12px;bottom:12px;gap:.35rem;padding:.3rem;border-radius:14px}
+  .bakery-cake-thumbnails button{width:50px;height:50px;flex-basis:50px;border-radius:10px}
+  .bakery-trust-marquee{margin:1rem .75rem 0;border-radius:12px}
+  .bakery-trust-marquee span{padding:.7rem 1.4rem;font-size:.56rem}
+  .bakery-home-section,.bakery-order-paths{padding:4.8rem 1rem 0}
+  .bakery-section-title{align-items:flex-start;gap:.8rem;margin-bottom:1.35rem}
+  .bakery-section-title h2{font-size:clamp(2.25rem,10vw,3.1rem)}
+  .bakery-section-title>a{min-height:38px;padding:.5rem .7rem;font-size:.6rem}
+  .bakery-event-grid{grid-template-columns:repeat(2,minmax(0,1fr));border-radius:22px}
+  .bakery-event-grid a{min-height:128px;padding:.9rem;border-right:2px solid var(--bakery-chocolate);border-bottom:2px solid var(--bakery-chocolate)}
+  .bakery-event-grid a:nth-child(3n){border-right:2px solid var(--bakery-chocolate)}
+  .bakery-event-grid a:nth-child(2n){border-right:0}
+  .bakery-event-grid a:nth-child(n+4){border-bottom:2px solid var(--bakery-chocolate)}
+  .bakery-event-grid a:nth-child(n+5){border-bottom:0}
+  .bakery-event-grid a span{width:40px;height:40px}
+  .bakery-event-grid a span svg{width:20px;height:20px}
+  .bakery-event-grid a b{font-size:1.08rem}
+  .bakery-order-paths>div:last-child{grid-template-columns:1fr;border-radius:22px}
+  .bakery-order-paths a{min-height:104px;padding:1rem;border-right:0!important;border-bottom:1px solid var(--bakery-line)!important}
+  .bakery-order-paths a:last-child{border-bottom:0!important}
+  .bakery-style-grid{display:flex;margin-right:-1rem;padding-right:1rem;border:0;border-radius:0;overflow-x:auto;background:transparent;scroll-snap-type:x mandatory}
+  .bakery-style-grid a{min-width:82vw;min-height:420px;border:2px solid var(--bakery-chocolate);border-radius:22px;scroll-snap-align:start}
+  .bakery-builder-banner{margin:5rem 1rem 0;grid-template-columns:1fr;border-radius:25px}
+  .bakery-builder-banner>div{padding:2rem 1.25rem}
+  .bakery-builder-banner h2{font-size:2.75rem}
+  .bakery-builder-banner img{order:-1;min-height:340px}
+}
+
+@media(max-width:390px){
+  .bakery-app-hero-art.bakery-cake-carousel{height:345px;min-height:345px}
+  .bakery-app-hero-copy h1{font-size:2.9rem}
+  .bakery-cake-carousel-controls .bakery-carousel-toggle span{display:none}
+  .bakery-cake-carousel-controls .bakery-carousel-toggle{width:34px;padding:0;border-left:0}
+  .bakery-cake-slide figcaption>small{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .bakery-cake-slide,.bakery-cake-slide img,.bakery-cake-thumbnails button,.bakery-event-grid a,.bakery-order-paths a,.bakery-style-grid img,.bakery-builder-banner img{transition:none!important}
+  .bakery-carousel-progress{display:none}
+}
