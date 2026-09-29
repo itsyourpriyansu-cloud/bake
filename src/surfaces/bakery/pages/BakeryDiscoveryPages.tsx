@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Baby, BriefcaseBusiness, CakeSlice, CalendarDays, Check, ChevronRight, Clock3, Gift, Heart, Leaf, MapPin, Palette, PartyPopper, Search, Sparkles, Star } from 'lucide-react'
+import { ArrowRight, Baby, BriefcaseBusiness, CakeSlice, Check, Clock3, Gift, Heart, Leaf, Palette, PartyPopper, Search, Sparkles, Star } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { useBakeryCartActions, useBakeryCatalog, useBakeryProduct } from '../../../features/bakery/useBakery'
@@ -42,7 +42,6 @@ const heroTitleWords = ['YOUR', 'CAKE,', 'MADE', 'YOUR', 'WAY.']
 
 export function BakeryHomePage() {
   const catalog = useBakeryCatalog(); const customer = readBakeryCustomer(); const products = catalog.data?.products ?? []
-  const [fulfillment, setFulfillment] = useState<'DELIVERY' | 'PICKUP'>('DELIVERY'); const [fulfillmentOpen, setFulfillmentOpen] = useState(false)
   const [activeSlide, setActiveSlide] = useState(0); const [carouselHovering, setCarouselHovering] = useState(false); const [carouselFocused, setCarouselFocused] = useState(false)
   const homeRef = useRef<HTMLDivElement>(null)
   const best = products.filter((product) => product.bestseller).slice(0, 4); const ready = products.filter((product) => product.readyToday && product.category !== 'CAKES').slice(0, 4)
@@ -78,7 +77,6 @@ export function BakeryHomePage() {
 
   const activeCake = heroSlides[activeSlide]
   return <div ref={homeRef} className="bakery-home">
-    <section className="bakery-fulfillment"><button type="button" aria-haspopup="dialog" onClick={() => setFulfillmentOpen(true)}><MapPin /><span><small>{fulfillment === 'DELIVERY' ? 'DELIVERY TO' : 'PICKUP FROM'}</small><b>Grand Road, Hyderabad</b></span><ChevronRight /></button><Link to="/bakery/app/celebrations"><CalendarDays /><span><small>NEXT CELEBRATION</small><b>Add a date</b></span></Link></section>
     <section className="bakery-app-hero" aria-labelledby="bakery-home-title">
       <div className="bakery-app-hero-copy">
         <span className="bakery-kicker">CAKES FOR EVERY CELEBRATION</span>
@@ -101,7 +99,6 @@ export function BakeryHomePage() {
     <section className="bakery-builder-banner" data-home-reveal><div><Sparkles /><span className="bakery-kicker">CUSTOMISE YOUR CAKE</span><h2>CHOOSE THE SIZE, FLAVOUR, COLOUR AND MESSAGE.</h2><p>See the price and preparation time update while you make your choices.</p><Link className="bakery-button primary" to="/bakery/app/design/cake-floral-lavender">START CUSTOMISING</Link></div><img data-home-media src={bakeryAssets.product.floral} alt="Flower celebration cake" loading="lazy" /></section>
     <section className="bakery-home-section" data-home-reveal><BakerySectionTitle eyebrow="AVAILABLE TODAY" title="FRESH BAKES YOU CAN ORDER NOW" action={{ label: 'See today’s bakes', to: '/bakery/app/bakes' }} />{catalog.isError ? <BakeryStatePanel title="WE COULDN’T LOAD TODAY’S BAKES" description="Please try again in a moment." actionLabel="TRY AGAIN" onAction={() => void catalog.refetch()} /> : <div className="bakery-product-grid">{ready.map((product) => <BakeryProductCard product={product} key={product.id} />)}</div>}</section>
     {customer ? <section className="bakery-points-card" data-home-reveal><div><Star /><span>REWARD POINTS</span><h2>182</h2><p>Gold member · ₹880 more to reach Platinum</p></div><div><strong>YOUR NEXT ORDER EARNS MORE POINTS</strong><p>Keep your saved cake designs and celebration details together.</p><Link to="/bakery/app/rewards">VIEW YOUR REWARDS <ArrowRight /></Link></div></section> : <section className="bakery-points-card guest" data-home-reveal><div><Gift /><span>REWARD POINTS</span><h2>EARN POINTS ON EVERY ORDER.</h2></div><div><strong>SIGN IN WHEN YOU ARE READY TO ORDER</strong><p>You can browse without signing in. Sign in at checkout to earn points and save cake designs.</p><Link to="/bakery/app/auth?returnTo=/bakery/app/rewards">LEARN ABOUT REWARDS <ArrowRight /></Link></div></section>}
-    {fulfillmentOpen && <div className="bakery-sheet-backdrop" role="presentation" onMouseDown={() => setFulfillmentOpen(false)}><section className="bakery-choice-sheet" role="dialog" aria-modal="true" aria-labelledby="bakery-fulfillment-title" onMouseDown={(event) => event.stopPropagation()}><span className="bakery-kicker">CHOOSE HOW TO RECEIVE YOUR ORDER</span><h2 id="bakery-fulfillment-title">DELIVERY OR PICKUP</h2><p>Select delivery to your address or pickup from our Grand Road store. The fee and time are shown before checkout.</p><button type="button" className={fulfillment === 'DELIVERY' ? 'selected' : ''} onClick={() => { setFulfillment('DELIVERY'); setFulfillmentOpen(false) }}><MapPin /><span><b>Delivery</b><small>Delivered carefully to your address</small></span>{fulfillment === 'DELIVERY' && <Check />}</button><button type="button" className={fulfillment === 'PICKUP' ? 'selected' : ''} onClick={() => { setFulfillment('PICKUP'); setFulfillmentOpen(false) }}><CalendarDays /><span><b>Pickup</b><small>Collect from Grand Road, Hyderabad</small></span>{fulfillment === 'PICKUP' && <Check />}</button><button className="bakery-sheet-close" type="button" onClick={() => setFulfillmentOpen(false)}>KEEP {fulfillment}</button></section></div>}
   </div>
 }
 

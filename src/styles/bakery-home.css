@@ -1,6 +1,14 @@
 /* Customer home: cake-led discovery and clear ordering language */
 .bakery-home{overflow-x:hidden;width:100%;max-width:100%}
-.bakery-app-hero{isolation:isolate;min-height:610px;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);border:1px solid rgba(50,23,19,.12);border-radius:36px;background:linear-gradient(145deg,#fffdf9 0%,#fff6ed 100%);box-shadow:0 24px 70px rgba(72,39,30,.1)}
+.bakery-head-actions{align-items:center}
+.bakery-header-location{min-height:46px;display:flex;align-items:center;gap:.55rem;padding:.4rem .65rem;border:1px solid rgba(50,23,19,.16);border-radius:15px;background:var(--bakery-paper);color:var(--bakery-chocolate);text-align:left;cursor:pointer;transition:border-color .2s ease,background-color .2s ease,transform .2s ease}
+.bakery-header-location>svg:first-child{width:18px;height:18px;flex:0 0 18px;stroke-width:2.2}
+.bakery-header-location>svg:last-child{width:14px;height:14px;flex:0 0 14px;color:var(--bakery-muted)}
+.bakery-header-location-copy{min-width:0;display:flex;flex-direction:column;gap:.08rem}
+.bakery-header-location-copy small{font-size:.48rem;font-weight:850;letter-spacing:.08em;color:var(--bakery-muted)}
+.bakery-header-location-copy b{max-width:150px;overflow:hidden;font-size:.68rem;line-height:1.15;text-overflow:ellipsis;white-space:nowrap}
+.bakery-location-compact{display:none}
+.bakery-app-hero{isolation:isolate;min-height:610px;margin-top:1rem;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);border:1px solid rgba(50,23,19,.12);border-radius:36px;background:linear-gradient(145deg,#fffdf9 0%,#fff6ed 100%);box-shadow:0 24px 70px rgba(72,39,30,.1)}
 .bakery-app-hero-copy{position:relative;z-index:2;padding:clamp(2.5rem,4vw,3.25rem);background:radial-gradient(circle at 10% 10%,rgba(255,213,25,.22),transparent 34%),linear-gradient(150deg,#fffdf9 0%,#fff7ef 100%)}
 .bakery-app-hero-copy .bakery-kicker{color:#7c5146;font-size:.7rem;letter-spacing:.13em}
 .bakery-app-hero-copy h1{width:100%;max-width:64rem;margin:.85rem 0 1.1rem;font-size:clamp(3.25rem,4.3vw,4.5rem);line-height:.88;letter-spacing:-.025em}
@@ -68,6 +76,7 @@
 .bakery-points-card a svg{width:16px;height:16px;color:currentColor}
 
 @media(hover:hover){
+  .bakery-header-location:hover{border-color:var(--bakery-chocolate);background:#fff7cc;transform:translateY(-1px)}
   .bakery-cake-slide-link:hover .bakery-cake-slide.is-active img{transform:scale(1.025)}
   .bakery-hero-actions .bakery-button:hover{transform:translateY(-2px)}
   .bakery-hero-actions .bakery-button.primary:hover{box-shadow:0 10px 0 #321713}
@@ -84,7 +93,14 @@
 }
 
 @media(max-width:768px){
-  .bakery-app-hero{margin:0 .75rem;grid-template-columns:1fr;min-height:0;border-radius:26px}
+  .bakery-app-header{gap:.55rem}
+  .bakery-app-header>.bakery-head-actions{margin-left:auto}
+  .bakery-header-location{max-width:128px;min-height:44px;gap:.4rem;padding:.35rem .5rem;border-radius:13px}
+  .bakery-header-location-copy small{font-size:.42rem}
+  .bakery-header-location-copy b{max-width:70px;font-size:.62rem}
+  .bakery-location-full{display:none}.bakery-location-compact{display:inline}
+  .bakery-header-location>svg:first-child{width:16px;height:16px;flex-basis:16px}.bakery-header-location>svg:last-child{width:12px;height:12px;flex-basis:12px}
+  .bakery-app-hero{margin:.75rem .75rem 0;grid-template-columns:1fr;min-height:0;border-radius:26px}
   .bakery-app-hero-art.bakery-cake-carousel{order:-1;height:365px;min-height:365px}
   .bakery-app-hero-copy{padding:1.7rem 1.2rem 1.5rem}
   .bakery-app-hero-copy .bakery-kicker{font-size:.58rem}
@@ -126,9 +142,16 @@
 }
 
 @media(max-width:390px){
+  .bakery-app-header{padding-inline:.75rem}
+  .bakery-header-location{max-width:112px}
   .bakery-app-hero-art.bakery-cake-carousel{height:345px;min-height:345px}
   .bakery-app-hero-copy h1{font-size:2.9rem}
   .bakery-cake-slide figcaption>small{display:none}
+}
+
+@media(max-width:350px){
+  .bakery-header-location{width:42px;padding:0;justify-content:center}
+  .bakery-header-location-copy,.bakery-header-location>svg:last-child{display:none}
 }
 
 @media(prefers-reduced-motion:reduce){
