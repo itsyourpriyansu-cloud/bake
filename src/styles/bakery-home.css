@@ -113,6 +113,9 @@
 
 @media(max-width:768px){
   .bakery-app-header{gap:.55rem}
+  .bakery-app-header .bakery-logo{max-width:132px;gap:.38rem}
+  .bakery-app-header .bakery-logo>svg{width:23px;height:23px;flex:0 0 23px}
+  .bakery-app-header .bakery-logo>span{gap:.16rem;font-size:.86rem;line-height:1}
   .bakery-app-header>.bakery-head-actions{margin-left:auto}
   .bakery-header-location{max-width:128px;min-height:44px;gap:.4rem;padding:.35rem .5rem;border-radius:13px}
   .bakery-header-location-copy small{font-size:.42rem}
@@ -170,6 +173,9 @@
 
 @media(max-width:390px){
   .bakery-app-header{padding-inline:.75rem}
+  .bakery-app-header .bakery-logo{max-width:122px;gap:.32rem}
+  .bakery-app-header .bakery-logo>svg{width:22px;height:22px;flex-basis:22px}
+  .bakery-app-header .bakery-logo>span{font-size:.8rem}
   .bakery-header-location{max-width:112px}
   .bakery-app-hero-art.bakery-cake-carousel{height:345px;min-height:345px}
   .bakery-app-hero-copy h1{font-size:2.9rem}
